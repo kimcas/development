@@ -1,0 +1,36 @@
+I have three major comonents: FilteredList, DisplayList, and Cart. 
+
+FilteredList is the parent component for DisplayList. Because of this, it contains all the 
+functions for filtering and sorting the product list. I am able to check these
+since the stte of FilteredList contains type, metal, and sort. These values keep
+track of the user's selection with the default being no selections. In FilteredList.js
+there are Navbars for the Type, Metal, and Sort By Price so the user can select 
+their preferences. After, there is a DisplayList component and the filtered and
+sorted list is passed down to the DisplayList component. In FilteredList.js, 
+the state is changed when the user selects a specific type, metal, or a sorting 
+option. This is useful because once the user selects a filter or sorting option, 
+the filter and sort functions know what to filter the product list on. 
+
+DisplayList is the child component for FilteredList but the parent component for 
+the Cart component. In DisplayList, there are functions for adding and removing 
+items to the shopping cart. These functions cover all buttons such as "Add To Cart", 
+"Remove Item", and the increment and decrement buttons on the quantity bar within 
+the shopping cart. The state for DisplayList contains the total and aggregatedList. 
+The total value represents the subtotal of the shopping cart and the aggregatedList 
+value contains the items in the shopping cart (the items the user wants to buy). 
+In DisplayList, I call map to render each item with all the essential information
+from the filtered and sorted product list that was passed down from FilteredList. 
+Below, there is the Cart component and the total, aggregated list, removeItem function, 
+increment function and decrement function are passed down. The total state and 
+aggregatedList states are changed when an item is added or removed from the shopping 
+cart. 
+
+Cart isthe child component of DisplayList. Since most of the functions are passed
+down from DisplayList, the only other function in the Cart class is a function
+to alert the user of the final total of the cart when "Checkout" is called. Since 
+we are not required to implement a checkout page, this is sufficient. The Cart 
+component simply calls map again on the aggregatedList to render all elements
+in the shopping cart and display the appropriate information. For the buttons such 
+as "Remove Item" or "+"/"-", the corresponding function that was passed down from 
+DisplayList is called. There is no changes in state as there is no defined state
+for the Cart component. 
