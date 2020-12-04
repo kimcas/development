@@ -29,7 +29,7 @@ function App() {
     {name:"Safety Pin Earrings", type:"earrings", metal:"gold", price:"15.50", image: Safety, count:0},
     {name:"Initial Charm Necklace", type:"necklaces", metal:"gold", price:"31.20", image: Charm, count:0},
     {name:"Silver Beaded Necklace", type:"necklaces", metal:"silver", price:"24.10", image: Beaded, count:0},
-    {name:"Starbusrt Necklace", type:"necklaces", metal:"gold", price:"20.80", image: Starburst, count:0},
+    {name:"Starburst Necklace", type:"necklaces", metal:"gold", price:"20.80", image: Starburst, count:0},
   ]
   return (
     <div>
