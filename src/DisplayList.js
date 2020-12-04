@@ -13,10 +13,6 @@ class DisplayList extends Component {
     updateTotalAdd = item => {
         this.state.total = (parseFloat(this.state.total) + parseFloat(item.price)).toFixed(2)
     }
-    // updates total when product is removed from cart
-    updateTotalSub = item => {
-        this.state.total = (parseFloat(this.state.total) - parseFloat(item.price)).toFixed(2)
-    }
     // corrects total and removes item from shopping cart -- aggregated list is a list 
     // of prodcuts in shopping cart
     removeItem = (item) => {
@@ -59,7 +55,9 @@ class DisplayList extends Component {
             this.removeItem(item)
         } else {
             item.count = item.count - 1
-            this.updateTotalSub(item)
+            this.setState({
+                total: this.state.total = (parseFloat(this.state.total) - parseFloat(item.price)).toFixed(2)
+            })
         }
     }
     render() {
